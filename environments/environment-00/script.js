@@ -19,6 +19,5 @@ function RegisterClick() {
 
 function btnClicked() {
   console.log("Det virker");
-  document.querySelector("#result_failure").classList.add("hide");
   document.querySelector("#result_success").classList.remove("hide");
 }
