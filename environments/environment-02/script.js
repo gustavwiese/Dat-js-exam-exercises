@@ -1,61 +1,120 @@
 "use strict";
 
-window.addEventListener("load", initApp);
+/* --------------- !!! ØVELSE 3 !!! ------------------- */
 
-const animals = [];
+window.addEventListener("load", start);
 
-function initApp() {
-    createAnimal("Bo", "abe", 22); // test af del 1
-    console.log(animals); // test af del 1
-    // event på formular
-    document.querySelector("#create-form").addEventListener("submit", createFormSubmitted);
+/*
+
+
+let animals = [];
+
+function start() {
+  console.log("js kører");
+  document.querySelector("#create-form").addEventListener("submit", addAnimal);
 }
 
 function createAnimal(name, type, age) {
-    // nyt animal objekt med værdier fra argumenter
-    const animal = {
-        name: name,
-        type: type,
-        age: age
-    };
-    animals.push(animal); // det nye objekt tilføjes den globale liste, animals
-    return animal;
+  const animal = {
+    name: name,
+    type: type,
+    age: age,
+  };
+  animals.push(animal);
+  return;
 }
 
-function createFormSubmitted(event) {
-    event.preventDefault(); // prevent default submit event
+function addAnimal(event) {
+  event.preventDefault();
+  const form = event.target;
+  const name = form.name.value;
+  const type = form.type.value;
+  const age = form.age.value;
 
-    const form = event.target; // reference til formularen
-    // få fat i værdier fra formular
-    const name = form.name.value;
-    const type = form.type.value;
-    const age = form.age.value;
-    // kald createAnimal med værdier fra formular
-    createAnimal(name, type, age);
-    console.log(animals); // test animals
-    // sørg for at alle animals vises (+ det nye) ved at kalde showAnimals
-    showAnimals();
+  createAnimal(name, type, age);
+  console.log(animals);
+  showAnimals();
 }
 
 function showAnimals() {
-    // sort animals by name
-    animals.sort(compareName);
-    console.log(animals);
-    // reset tbody
-    document.querySelector("#list-container tbody").innerHTML = "";
-
-    for (const animal of animals) {
-        const html = /*html*/ `
-            <tr>
-                <td>${animal.name}</td>
-                <td>${animal.type}</td>
-                <td>${animal.age}</td>
-            </tr>
+  document.querySelector("#list-container tbody").innerHTML = "";
+  animals.sort(sortAnimals);
+  for (const animal of animals) {
+    const html = `
+        <td>${animal.name}</td>
+        <td>${animal.type}</td>
+        <td>${animal.age}</td>
         `;
-        document.querySelector("#list-container tbody").insertAdjacentHTML("beforeend", html);
-    }
+    document.querySelector("#list-container tbody").insertAdjacentHTML("beforeend", html);
+  }
 }
 
-function compareName(a, b) {
-    return a.name.localeCompare(b.name);
+function sortAnimals(a, b) {
+  return a.name.localeCompare(b.name);
 }
+
+*/
+
+/* --------------- !!! ØVELSE 5 !!! ------------------- */
+
+/*
+
+function start() {
+  console.log("det virker");
+  document.querySelector("#create-form").addEventListener("submit", formClicked);
+
+  showAnimals();
+}
+
+let animals = [
+  {
+    name: "Peter",
+    type: "cat",
+    age: 39,
+  },
+  {
+    name: "Rasmus",
+    type: "dog",
+    age: "32",
+  },
+  {
+    name: "Oscar",
+    type: "mouse",
+    age: 88,
+  },
+];
+
+function showAnimals() {
+  document.querySelector("#list-container tbody").innerHTML = "";
+  animals.sort((a, b) => a.age - b.age);
+  for (const animal of animals) {
+    const html = `
+        <td>${animal.name}</td>
+        <td>${animal.type}</td>
+        <td>${animal.age}</td>
+        `;
+    document.querySelector("#list-container tbody").insertAdjacentHTML("beforeend", html);
+  }
+}
+
+function createAnimal(name, type, age) {
+  const animal = {
+    name: name,
+    type: type,
+    age: age,
+  };
+  animals.push(animal);
+  return animal;
+}
+
+function formClicked(event) {
+  event.preventDefault();
+  const form = event.target;
+  const name = form.name.value;
+  const type = form.type.value;
+  const age = form.age.value;
+  createAnimal(name, type, age);
+  showAnimals();
+}
+
+*/

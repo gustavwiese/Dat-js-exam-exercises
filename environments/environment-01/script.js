@@ -1,6 +1,6 @@
 "use strict"; /*
 
-/* --- !!! ØVELSE 1 !!! --- */
+/* --------------- !!! ØVELSE 1 !!! ------------------- */
 
 window.addEventListener("load", start);
 /*
@@ -45,7 +45,7 @@ function usersByRole(users) {
   document.querySelector("#guest-count").textContent = roleCount.guest;
 }*/
 
-/* --- !!! ØVELSE 2 !!! --- */
+/* --------------- !!! ØVELSE 2 !!! ------------------- */
 
 /*
 
@@ -74,7 +74,7 @@ function showUsers(users) {
 }
 */
 
-/* --- !!! ØVELSE 4 !!! --- */
+/* --------------- !!! ØVELSE 4 !!! ------------------- */
 
 /*
 
